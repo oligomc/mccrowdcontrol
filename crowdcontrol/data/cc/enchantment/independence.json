@@ -1,0 +1,54 @@
+{
+    "description": "",
+    "supported_items": "minecraft:golden_sword",
+    "weight": 1,
+    "max_level": 1,
+    "min_cost": {
+      "base": 2147483647,
+      "per_level_above_first": 2147483647
+    },
+    "max_cost": {
+      "base": 2147483647,
+      "per_level_above_first": 2147483647
+    },
+    "anvil_cost": 2147483647,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:attributes": [
+        {
+          "attribute": "minecraft:follow_range",
+          "id": "cc:passive",
+          "amount": -1,
+          "operation": "add_multiplied_base"
+        }
+      ],
+      "minecraft:tick": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "cc:tick"
+          }
+        }
+      ],
+      "minecraft:post_attack": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "cc:attack/attacker"
+          },
+          "enchanted": "victim",
+          "affected": "attacker"
+        },
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "cc:attack/victim"
+          },
+          "enchanted": "victim",
+          "affected": "victim"
+        }
+      ]
+    }
+  }

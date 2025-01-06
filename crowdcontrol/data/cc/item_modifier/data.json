@@ -1,0 +1,31 @@
+[
+  {
+    "function": "minecraft:copy_custom_data",
+    "source": {
+      "type": "minecraft:context",
+      "target": "this"
+    },
+    "ops": [
+      {
+        "source": "attributes[{id:\"minecraft:follow_range\"}].base",
+        "target": "base",
+        "op": "replace"
+      }
+    ]
+  },
+  {
+    "function": "minecraft:copy_custom_data",
+    "source": {
+      "type": "minecraft:storage",
+      "source": "uuid:convert"
+    },
+    "ops": [
+      {
+        "source": "output",
+        "target": "uuid",
+        "op": "replace"
+      }
+    ],
+    "conditions": []
+  }
+]
